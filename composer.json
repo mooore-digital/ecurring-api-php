@@ -1,6 +1,11 @@
 {
     "name": "marissen/ecurring-api-php",
     "description": "eCurring API client library for PHP.",
+    "keywords": [
+        "ecurring",
+        "mollie",
+        "subscriptions"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
