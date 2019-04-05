@@ -57,12 +57,14 @@ $subscription = $subscriptionPlan->createSubscription(200);
 Get all subscriptions
 
 ```php
-$subscriptions = $client->subscriptions->page();
-foreach ($subscriptions as $subscription) {
-    if ($subscription->isActive()) {
-        // do something
+$customers = $client->customers->page();
+do {
+    foreach ($customers as $customer) {
+        if ($subscription->isActive()) {
+            // do something
+        }
     }
-}
+} while ($customers = $customers->next());
 ```
 
 ## Roadmap
