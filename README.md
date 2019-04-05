@@ -2,10 +2,7 @@
 
 This is an unofficial library which provides PHP bindings for the eCurring API. 
 
-## Links
-
-- [eCurring Home](https://www.ecurring.com/)
-- [eCurring API Documentation](https://docs.ecurring.com/)
+[eCurring Home](https://www.ecurring.com/) | [eCurring API Documentation](https://docs.ecurring.com/)
 
 ## Requirements
 
