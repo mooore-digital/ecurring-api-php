@@ -1,0 +1,34 @@
+{
+    "name": "marissen/ecurring-api-php",
+    "description": "eCurring API client library for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Timon de Groot",
+            "email": "timon@marissen.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^6.3",
+        "composer/ca-bundle": "^1.1",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marissen\\eCurring\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Marissen\\eCurring\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "phpstan/phpstan": "^0.11.5",
+        "phpro/grumphp": "^0.15.0",
+        "fzaninotto/faker": "^1.8"
+    }
+}
