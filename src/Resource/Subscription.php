@@ -128,7 +128,7 @@ class Subscription extends AbstractResource
     public function pause(\DateTime $resumeDate = null): Subscription
     {
         return $this->update([
-            'status' => 'paused',
+            'status' => self::STATUS_PAUSED,
             'resume_date' => $resumeDate !== null ? $resumeDate->format(\DateTime::ATOM) : null
         ]);
     }
@@ -139,7 +139,7 @@ class Subscription extends AbstractResource
      */
     public function resume(): Subscription
     {
-        return $this->update(['status' => 'active']);
+        return $this->update(['status' => self::STATUS_ACTIVE]);
     }
 
     /**
@@ -153,7 +153,7 @@ class Subscription extends AbstractResource
             return $this->update(['cancel_date' => $cancelDate->format(\DateTime::ATOM)]);
         }
 
-        return $this->update(['status' => 'cancelled']);
+        return $this->update(['status' => self::STATUS_CANCELLED]);
     }
 
     public function isActive(): bool
