@@ -140,12 +140,13 @@ class Customer extends AbstractResource
 
     /**
      * @param int $subscriptionId
+     * @param array $attributes
      * @return Subscription
      * @throws ApiException
      */
-    public function createSubscription(int $subscriptionId): Subscription
+    public function createSubscription(int $subscriptionId, array $attributes = []): Subscription
     {
-        return $this->client->subscriptions->create($this->id, $subscriptionId);
+        return $this->client->subscriptions->create($this->id, $subscriptionId, $attributes);
     }
 
     /**

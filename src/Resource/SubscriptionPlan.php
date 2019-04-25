@@ -53,11 +53,12 @@ class SubscriptionPlan extends AbstractResource
 
     /**
      * @param int $customerId
+     * @param array $attributes
      * @return Subscription
      * @throws \Marissen\eCurring\Exception\ApiException
      */
-    public function createSubscription(int $customerId): Subscription
+    public function createSubscription(int $customerId, array $attributes = []): Subscription
     {
-        return $this->client->subscriptions->create($customerId, $this->id);
+        return $this->client->subscriptions->create($customerId, $this->id, $attributes);
     }
 }
