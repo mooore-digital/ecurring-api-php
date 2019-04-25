@@ -28,7 +28,7 @@ class eCurringHttpClient
      */
     private const TIMEOUT = 10;
     /**
-     * eCurring HTTP Client Version
+     * eCurring HTTP Client Version.
      */
     private const VERSION = '0.1.0';
 
