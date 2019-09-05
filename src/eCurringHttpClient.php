@@ -14,6 +14,7 @@ use Marissen\eCurring\Endpoint\CustomerEndpoint;
 use Marissen\eCurring\Endpoint\SubscriptionEndpoint;
 use Marissen\eCurring\Endpoint\SubscriptionPlanEndpoint;
 use Marissen\eCurring\Exception\ApiException;
+use Marissen\eCurring\Exception\PhpVersionException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
@@ -66,6 +67,7 @@ class eCurringHttpClient
         $this->subscriptionPlans = new SubscriptionPlanEndpoint($this);
         $this->customers = new CustomerEndpoint($this);
         $this->subscriptions = new SubscriptionEndpoint($this);
+        $this->assertPhpVersion();
     }
 
     public function setApiKey(string $apiKey): void
@@ -157,6 +159,13 @@ class eCurringHttpClient
     {
         if (empty($this->apiKey)) {
             throw new ApiException('API key is not configured yet. Please use eCurringHttpClient::setApiKey().');
+        }
+    }
+
+    private function assertPhpVersion()
+    {
+        if (!version_compare(phpversion(), '7.2', '>=')) {
+            throw new PhpVersionException('>= 7.2');
         }
     }
 }
