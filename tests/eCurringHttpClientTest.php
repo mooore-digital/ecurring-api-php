@@ -1,6 +1,6 @@
 <?php
 
-namespace Marissen\eCurring;
+namespace Mooore\eCurring;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;

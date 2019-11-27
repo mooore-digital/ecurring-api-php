@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Resource;
+namespace Mooore\eCurring\Resource;
 
 class SubscriptionPlan extends AbstractResource
 {
@@ -55,7 +55,7 @@ class SubscriptionPlan extends AbstractResource
      * @param int $customerId
      * @param array $attributes
      * @return Subscription
-     * @throws \Marissen\eCurring\Exception\ApiException
+     * @throws \Mooore\eCurring\Exception\ApiException
      */
     public function createSubscription(int $customerId, array $attributes = []): Subscription
     {

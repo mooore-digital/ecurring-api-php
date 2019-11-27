@@ -1,6 +1,6 @@
 <?php
 
-namespace Marissen\eCurring\Resource;
+namespace Mooore\eCurring\Resource;
 
 interface ResourceFactoryInterface
 {

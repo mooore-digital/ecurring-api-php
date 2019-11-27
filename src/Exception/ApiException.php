@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Exception;
+namespace Mooore\eCurring\Exception;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;

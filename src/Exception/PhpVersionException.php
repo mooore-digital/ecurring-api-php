@@ -1,6 +1,6 @@
 <?php
 
-namespace Marissen\eCurring\Exception;
+namespace Mooore\eCurring\Exception;
 
 use \Exception;
 use \Throwable;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Resource;
+namespace Mooore\eCurring\Resource;
 
-use Marissen\eCurring\Exception\ApiException;
+use Mooore\eCurring\Exception\ApiException;
 
 class Customer extends AbstractResource
 {

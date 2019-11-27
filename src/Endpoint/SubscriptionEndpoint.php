@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Endpoint;
+namespace Mooore\eCurring\Endpoint;
 
-use Marissen\eCurring\Exception\ApiException;
-use Marissen\eCurring\Resource\AbstractResource;
-use Marissen\eCurring\Resource\Collection;
-use Marissen\eCurring\Resource\Subscription;
-use Marissen\eCurring\Resource\SubscriptionCollection;
+use Mooore\eCurring\Exception\ApiException;
+use Mooore\eCurring\Resource\AbstractResource;
+use Mooore\eCurring\Resource\Collection;
+use Mooore\eCurring\Resource\Subscription;
+use Mooore\eCurring\Resource\SubscriptionCollection;
 
 class SubscriptionEndpoint extends AbstractEndpoint
 {

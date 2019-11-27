@@ -13,7 +13,7 @@ In order to use this library, you need:
 ## Installation
 
 ```bash
-composer require marissen/ecurring-api-php
+composer require mooore/ecurring-api-php
 ```
 
 ## Getting started
@@ -21,7 +21,7 @@ composer require marissen/ecurring-api-php
 Initializing the eCurring client
 
 ```php
-use Marissen\eCurring\eCurringHttpClient;
+use Mooore\eCurring\eCurringHttpClient;
 
 $client = new eCurringHttpClient();
 $client->setApiKey('your_api_key');

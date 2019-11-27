@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring;
+namespace Mooore\eCurring;
 
 use Composer\CaBundle\CaBundle;
 use GuzzleHttp\Client;
@@ -10,11 +10,11 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Marissen\eCurring\Endpoint\CustomerEndpoint;
-use Marissen\eCurring\Endpoint\SubscriptionEndpoint;
-use Marissen\eCurring\Endpoint\SubscriptionPlanEndpoint;
-use Marissen\eCurring\Exception\ApiException;
-use Marissen\eCurring\Exception\PhpVersionException;
+use Mooore\eCurring\Endpoint\CustomerEndpoint;
+use Mooore\eCurring\Endpoint\SubscriptionEndpoint;
+use Mooore\eCurring\Endpoint\SubscriptionPlanEndpoint;
+use Mooore\eCurring\Exception\ApiException;
+use Mooore\eCurring\Exception\PhpVersionException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 

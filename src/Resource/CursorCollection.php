@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Resource;
+namespace Mooore\eCurring\Resource;
 
-use Marissen\eCurring\eCurringHttpClient;
-use Marissen\eCurring\Exception\ApiException;
+use Mooore\eCurring\eCurringHttpClient;
+use Mooore\eCurring\Exception\ApiException;
 
 abstract class CursorCollection extends Collection
 {

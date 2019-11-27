@@ -1,5 +1,5 @@
 {
-    "name": "marissen/ecurring-api-php",
+    "name": "mooore/ecurring-api-php",
     "description": "eCurring API client library for PHP.",
     "keywords": [
         "ecurring",
@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "Timon de Groot",
-            "email": "timon@marissen.net"
+            "email": "timon@mooore.nl"
         }
     ],
     "require": {
@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Marissen\\eCurring\\": "src/"
+            "Mooore\\eCurring\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Marissen\\eCurring\\": "tests/"
+            "Mooore\\eCurring\\": "tests/"
         }
     },
     "require-dev": {

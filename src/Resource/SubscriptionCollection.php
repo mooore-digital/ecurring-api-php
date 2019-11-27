@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Resource;
+namespace Mooore\eCurring\Resource;
 
 class SubscriptionCollection extends CursorCollection
 {

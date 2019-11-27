@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Marissen\eCurring\Resource;
+namespace Mooore\eCurring\Resource;
 
-use Marissen\eCurring\Exception\ApiException;
+use Mooore\eCurring\Exception\ApiException;
 
 /**
  * Class Subscription
- * @package Marissen\eCurring\Resource
+ * @package Mooore\eCurring\Resource
  * @see https://docs.ecurring.com/subscriptions/get/
  */
 class Subscription extends AbstractResource
