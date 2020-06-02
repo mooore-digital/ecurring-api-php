@@ -14,6 +14,8 @@ class SubscriptionPlanEndpoint extends AbstractEndpoint
 {
     protected $resourcePath = 'subscription-plans';
 
+    protected $resourceType = 'subscription-plan';
+
     /**
      * @return AbstractResource
      */

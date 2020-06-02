@@ -26,6 +26,12 @@ abstract class AbstractEndpoint
      * @var string
      */
     protected $resourcePath;
+
+    /**
+     * @var string the resource type of the resource object for the endpoint
+     */
+    protected $resourceType;
+
     /**
      * @var string|null
      */
@@ -128,11 +134,18 @@ abstract class AbstractEndpoint
         return $this->resourceFactory->createFromApiResult($result->data, $this->getResourceObject());
     }
 
-    protected function createPayloadFromAttributes(string $type, array $attributes, int $id = 0)
+    /**
+     * Create the data payload for the resource object with the supplied attributes and optionally sets the id.
+     *
+     * @param array $attributes the attributes of the resource to set.
+     * @param int $id (optional) the identifier of the resource to set the attributes for, default 0.
+     * @return array[] containing the data payload.
+     */
+    protected function createPayloadFromAttributes(array $attributes, int $id = 0)
     {
         $payload = [
             'data' => [
-                'type' => $type,
+                'type' => $this->getResourceType(),
                 'attributes' => $attributes
             ]
         ];
@@ -147,6 +160,11 @@ abstract class AbstractEndpoint
     private function getResourcePath(): string
     {
         return $this->resourcePath;
+    }
+
+    private function getResourceType(): string
+    {
+        return $this->resourceType;
     }
 
     private function buildQueryString(array $filters): string

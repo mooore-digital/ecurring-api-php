@@ -17,6 +17,8 @@ class SubscriptionEndpoint extends AbstractEndpoint
      */
     protected $resourcePath = 'subscriptions';
 
+    protected $resourceType = 'subscription';
+
     /**
      * @return AbstractResource
      */
@@ -45,7 +47,7 @@ class SubscriptionEndpoint extends AbstractEndpoint
     public function create(int $customerId, int $subscriptionPlanId, array $attributes = [])
     {
         return $this->rest_create(
-            $this->createPayloadFromAttributes('subscription', array_merge([
+            $this->createPayloadFromAttributes(array_merge([
                 'customer_id' => $customerId,
                 'subscription_plan_id' => $subscriptionPlanId
             ], $attributes))
@@ -83,7 +85,7 @@ class SubscriptionEndpoint extends AbstractEndpoint
     {
         return $this->rest_update(
             $subscriptionId,
-            $this->createPayloadFromAttributes('subscription', $attributes)
+            $this->createPayloadFromAttributes($attributes)
         );
     }
 }
