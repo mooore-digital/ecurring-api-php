@@ -85,7 +85,7 @@ class SubscriptionEndpoint extends AbstractEndpoint
     {
         return $this->rest_update(
             $subscriptionId,
-            $this->createPayloadFromAttributes($attributes)
+            $this->createPayloadFromAttributes($attributes, $subscriptionId)
         );
     }
 }
