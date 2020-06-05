@@ -14,6 +14,8 @@ class CustomerEndpoint extends AbstractEndpoint
 {
     protected $resourcePath = 'customers';
 
+    protected $resourceType = 'customer';
+
     /**
      * @return AbstractResource
      */
@@ -41,7 +43,7 @@ class CustomerEndpoint extends AbstractEndpoint
     public function create(array $attributes, array $filters = [])
     {
         return $this->rest_create(
-            $this->createPayloadFromAttributes('customer', $attributes),
+            $this->createPayloadFromAttributes($attributes),
             $filters
         );
     }
@@ -79,7 +81,7 @@ class CustomerEndpoint extends AbstractEndpoint
     {
         return $this->rest_update(
             $customerId,
-            $this->createPayloadFromAttributes('customer', $attributes, $customerId)
+            $this->createPayloadFromAttributes($attributes, $customerId)
         );
     }
 }
