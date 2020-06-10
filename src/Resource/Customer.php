@@ -59,7 +59,7 @@ class Customer extends AbstractResource
     /**
      * @var string
      */
-    public $postal_code;
+    public $postalcode;
     /**
      * @var string
      */
@@ -109,7 +109,7 @@ class Customer extends AbstractResource
         'bank_verification_method',
         'card_holder',
         'card_number',
-        'postal_code',
+        'postalcode',
         'house_number',
         'house_number_add',
         'street',
@@ -165,7 +165,7 @@ class Customer extends AbstractResource
 
     /**
      * @param string $city
-     * @param string $postcode
+     * @param string $postalCode
      * @param string $street
      * @param string $houseNumber
      * @param string|null $houseNumberAddition
@@ -174,14 +174,14 @@ class Customer extends AbstractResource
      */
     public function updateAddress(
         string $city,
-        string $postcode,
+        string $postalCode,
         string $street,
         string $houseNumber,
         string $houseNumberAddition = null
     ): Customer {
         return $this->update([
             'city' => $city,
-            'postcode' => $postcode,
+            'postalcode' => $postalCode,
             'street' => $street,
             'house_number' => $houseNumber,
             'house_number_add' => $houseNumberAddition
