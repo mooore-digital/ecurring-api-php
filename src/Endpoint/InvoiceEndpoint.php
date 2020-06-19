@@ -21,7 +21,8 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * Creates a new invoice in eCurring.
      *
      * @param int $subscriptionId the identifier of the subscription.
-     * @param array $attributes containing the optional attributes of the invoice like: invoice_date, transaction_date, original_invoice_id
+     * @param array $attributes containing the optional attributes of the invoice like: invoice_date, transaction_date,
+     * original_invoice_id
      * @param array $filters
      * @return AbstractResource|Invoice
      * @throws ApiException
@@ -30,7 +31,8 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
     {
         return $this->rest_create(
             $this->createPayloadFromAttributes(
-                array_merge(['subscription_id' => $subscriptionId], $attributes)),
+                array_merge(['subscription_id' => $subscriptionId], $attributes)
+            ),
             $filters
         );
     }
@@ -87,7 +89,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * @param int $invoiceId
      * @throws ApiException if the invoice id is invalid or the resource cannot be found.
      */
-    public function delete(int $invoiceId) : void
+    public function delete(int $invoiceId): void
     {
         $this->rest_delete($invoiceId);
     }
@@ -100,7 +102,8 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in
      * draft state.
      */
-    public function finalise(int $invoiceId) {
+    public function finalise(int $invoiceId)
+    {
         $result = $this->client->performHttpCall(
             'PATCH',
             sprintf('%s/%s/finalise', $this->resourcePath, $invoiceId)
@@ -119,7 +122,8 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * @return AbstractResource|Invoice
      * @throws ApiException if the invoice id is invalid, the resource cannot be found.
      */
-    public function credit(int $invoiceId) {
+    public function credit(int $invoiceId)
+    {
         $result = $this->client->performHttpCall(
             'PATCH',
             sprintf('%s/%s/credit', $this->resourcePath, $invoiceId)
@@ -138,7 +142,8 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in
      * open state.
      */
-    public function pay(int $invoiceId) {
+    public function pay(int $invoiceId)
+    {
         $result = $this->client->performHttpCall(
             'PATCH',
             sprintf('%s/%s/pay', $this->resourcePath, $invoiceId)
@@ -158,7 +163,8 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
     }
 
     /**
-     * Get the collection object that is used by this API endpoint. Every API endpoint uses one type of collection object.
+     * Get the collection object that is used by this API endpoint. Every API endpoint uses one type of collection
+     * object.
      *
      * @param int $count
      * @param object $links

@@ -16,18 +16,18 @@ class Transaction extends AbstractResource
 {
     // The status queued is not listed in the get transaction service, the queued status is always returned in the
     // create transaction response
-    const STATUS_QUEUED = 'queued';
-    const STATUS_SCHEDULED = 'scheduled';
-    const STATUS_SUCCEEDED = 'succeeded';
-    const STATUS_FULFILLED = 'fulfilled';
-    const STATUS_CHARGED_BACK = 'charged_back';
-    const STATUS_PAYMENT_FAILED = 'payment_failed';
-    const STATUS_RESCHEDULED = 'rescheduled';
-    const STATUS_FAILED = 'failed';
-    const STATUS_REFUNDED = 'refunded';
-    const STATUS_PAYMENT_REMINDER_SCHEDULED = 'payment_reminder_scheduled';
-    const STATUS_PAYMENT_REMINDER_SENT = 'payment_reminder_sent';
-    const STATUS_PAYMENT_REMINDER_OVERDUE = 'payment_reminder_overdue';
+    public const STATUS_QUEUED = 'queued';
+    public const STATUS_SCHEDULED = 'scheduled';
+    public const STATUS_SUCCEEDED = 'succeeded';
+    public const STATUS_FULFILLED = 'fulfilled';
+    public const STATUS_CHARGED_BACK = 'charged_back';
+    public const STATUS_PAYMENT_FAILED = 'payment_failed';
+    public const STATUS_RESCHEDULED = 'rescheduled';
+    public const STATUS_FAILED = 'failed';
+    public const STATUS_REFUNDED = 'refunded';
+    public const STATUS_PAYMENT_REMINDER_SCHEDULED = 'payment_reminder_scheduled';
+    public const STATUS_PAYMENT_REMINDER_SENT = 'payment_reminder_sent';
+    public const STATUS_PAYMENT_REMINDER_OVERDUE = 'payment_reminder_overdue';
 
     /**
      * @var string
@@ -153,5 +153,4 @@ class Transaction extends AbstractResource
     {
         return $this->status === 'payment_reminder_overdue';
     }
-
 }

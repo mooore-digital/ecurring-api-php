@@ -25,7 +25,8 @@ class SubscriptionEndpointTest extends BaseEndpointTest
                             "subscription_plan_id": 1
                         }
                     }
-                }'),
+                }'
+            ),
             new Response(
                 201,
                 [],
@@ -163,7 +164,8 @@ class SubscriptionEndpointTest extends BaseEndpointTest
                           }
                         }
                       }
-                    }')
+                    }'
+            )
         );
 
         $subscription = $this->apiClient->subscriptions->get(1);
@@ -282,7 +284,8 @@ class SubscriptionEndpointTest extends BaseEndpointTest
                     }
                 }'
             ),
-            new Response(200,
+            new Response(
+                200,
                 [],
                 '{
                     "links": {
@@ -328,7 +331,8 @@ class SubscriptionEndpointTest extends BaseEndpointTest
                             }
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $subscription = new Subscription($this->apiClient);

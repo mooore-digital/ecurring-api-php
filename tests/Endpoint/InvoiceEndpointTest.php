@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Mooore\eCurring\Endpoint;
-
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
@@ -98,7 +96,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
     public function testCreateInvoice()
     {
         $this->mockApiCall(
-            new Request('POST',
+            new Request(
+                'POST',
                 '/invoices',
                 [],
                 '{
@@ -110,7 +109,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
                     }
                 }'
             ),
-            new Response(201,
+            new Response(
+                201,
                 [],
                 '{
                     "links": {
@@ -166,7 +166,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
                             }
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $subscription = new Subscription($this->apiClient);
@@ -189,9 +190,12 @@ class InvoiceEndpointTest extends BaseEndpointTest
     public function testCreditInvoice()
     {
         $this->mockApiCall(
-            new Request('PATCH',
-                '/invoices/637377985/credit'),
-            new Response(200,
+            new Request(
+                'PATCH',
+                '/invoices/637377985/credit'
+            ),
+            new Response(
+                200,
                 [],
                 '{
                         "links": {
@@ -277,7 +281,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
                                 }
                             }
                         }
-                    }')
+                    }'
+            )
         );
 
         $invoice = $this->getInvoice();
@@ -299,7 +304,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
     public function testUpdateInvoice()
     {
         $this->mockApiCall(
-            new Request('PATCH',
+            new Request(
+                'PATCH',
                 '/invoices/637377985',
                 [],
                 '{
@@ -310,8 +316,10 @@ class InvoiceEndpointTest extends BaseEndpointTest
                             "invoice_date": "2019-10-04T00:00:00+02:00"
                         }
                     }
-                }'),
-            new Response(200,
+                }'
+            ),
+            new Response(
+                200,
                 [],
                 '{
                     "links": {
@@ -370,7 +378,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
                             }
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $invoice = $this->getInvoice();
@@ -402,8 +411,12 @@ class InvoiceEndpointTest extends BaseEndpointTest
     public function testFinaliseInvoice()
     {
         $this->mockApiCall(
-            new Request('PATCH', '/invoices/637377985/finalise'),
-            new Response(200,
+            new Request(
+                'PATCH',
+                '/invoices/637377985/finalise'
+            ),
+            new Response(
+                200,
                 [],
                 '{
                     "links": {
@@ -459,7 +472,8 @@ class InvoiceEndpointTest extends BaseEndpointTest
                             }
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $invoice = $this->getInvoice();
@@ -476,14 +490,13 @@ class InvoiceEndpointTest extends BaseEndpointTest
         $this->assertEquals(new \DateTime('2019-10-10T00:00:00+02:00'), $updatedInvoice->transaction_date);
         $this->assertEquals(new \DateTime('2019-10-03T11:33:17+02:00'), $updatedInvoice->created_at);
         $this->assertEquals(new \DateTime('2019-10-04T09:57:41+02:00'), $updatedInvoice->updated_at);
-
-
     }
 
     public function testPayInvoice()
     {
         $this->mockApiCall(
-            new Request('PATCH',
+            new Request(
+                'PATCH',
                 '/invoices/637377985/pay'
             ),
             new Response(
@@ -561,14 +574,14 @@ class InvoiceEndpointTest extends BaseEndpointTest
         $this->assertEquals(new \DateTime('2019-10-10T00:00:00+02:00'), $updatedInvoice->transaction_date);
         $this->assertEquals(new \DateTime('2019-10-03T11:33:17+02:00'), $updatedInvoice->created_at);
         $this->assertEquals(new \DateTime('2019-10-04T09:57:41+02:00'), $updatedInvoice->updated_at);
-
     }
 
     public function testListInvoices()
     {
         $this->mockApiCall(
             new Request('GET', '/invoices?page[number]=1&page[size]=10'),
-            new Response(200,
+            new Response(
+                200,
                 [],
                 '{
                         "meta": {
@@ -732,16 +745,17 @@ class InvoiceEndpointTest extends BaseEndpointTest
                                 }
                             }
                         ]
-                    }')
+                    }'
+            )
         );
 
         $invoices = $this->apiClient->invoices->page();
 
         $this->assertEquals(3, $invoices->count);
         $this->assertInstanceOf(InvoiceCollection::class, $invoices);
-        $this->assertFalse( $invoices->hasNext());
-        $this->assertFalse( $invoices->hasPrevious());
-        foreach($invoices as $invoice) {
+        $this->assertFalse($invoices->hasNext());
+        $this->assertFalse($invoices->hasPrevious());
+        foreach ($invoices as $invoice) {
             $this->assertInstanceOf(Invoice::class, $invoice);
         }
     }

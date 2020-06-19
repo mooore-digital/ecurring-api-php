@@ -54,8 +54,11 @@ abstract class BaseEndpointTest extends TestCase
             ->method('send')
             ->with($this->isInstanceOf(Request::class))
             ->willReturnCallback(function (Request $request) use ($expectedRequest, $response) {
-                $this->assertEquals($expectedRequest->getMethod(), $request->getMethod(),
-                    "HTTP method must be identical");
+                $this->assertEquals(
+                    $expectedRequest->getMethod(),
+                    $request->getMethod(),
+                    "HTTP method must be identical"
+                );
 
                 $this->assertEquals(
                     $expectedRequest->getUri()->getPath(),

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mooore\eCurring\Resource;
 
 use Mooore\eCurring\eCurringHttpClient;
@@ -47,5 +46,4 @@ class SubscriptionTest extends TestCase
             [Subscription::STATUS_UNVERIFIED, 'isUnverified', true],
         ];
     }
-
 }

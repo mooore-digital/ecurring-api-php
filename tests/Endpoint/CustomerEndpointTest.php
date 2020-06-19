@@ -14,9 +14,10 @@ class CustomerEndpointTest extends BaseEndpointTest
     public function testCreateCustomer()
     {
         $this->mockApiCall(
-            new Request('POST',
-                '/customers'
-                , [],
+            new Request(
+                'POST',
+                '/customers',
+                [],
                 '{
                 "data": {
                     "type": "customer",
@@ -28,7 +29,8 @@ class CustomerEndpointTest extends BaseEndpointTest
                 }
             }'
             ),
-            new Response(201,
+            new Response(
+                201,
                 [],
                 '{
                     "links": {
@@ -74,7 +76,8 @@ class CustomerEndpointTest extends BaseEndpointTest
                             }
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $customer = $this->apiClient->customers->create([
@@ -94,8 +97,12 @@ class CustomerEndpointTest extends BaseEndpointTest
     public function testGetCustomer()
     {
         $this->mockApiCall(
-            new Request('GET', '/customers/1'),
-            new Response(200,
+            new Request(
+                'GET',
+                '/customers/1'
+            ),
+            new Response(
+                200,
                 [],
                 '{
                     "links": {
@@ -146,7 +153,8 @@ class CustomerEndpointTest extends BaseEndpointTest
                             }
                         }
                     }
-                }')
+                }'
+            )
         );
         $customer = $this->apiClient->customers->get(1);
 
@@ -171,9 +179,12 @@ class CustomerEndpointTest extends BaseEndpointTest
     public function testListCustomer()
     {
         $this->mockApiCall(
-            new Request('GET', '/customers?page[number]=1&page[size]=10'),
-            new Response(200
-                ,
+            new Request(
+                'GET',
+                '/customers?page[number]=1&page[size]=10'
+            ),
+            new Response(
+                200,
                 [],
                 '{
                   "meta": {
@@ -233,7 +244,8 @@ class CustomerEndpointTest extends BaseEndpointTest
                         }
                     }
                   ]
-                }')
+                }'
+            )
         );
 
         // Please note the total value does not match the number of customers returned in the response, the
@@ -266,7 +278,8 @@ class CustomerEndpointTest extends BaseEndpointTest
                         "postalcode": "1000AA"
                     }
                 }
-            }'),
+            }'
+            ),
             new Response(
                 200,
                 [],
@@ -318,7 +331,7 @@ class CustomerEndpointTest extends BaseEndpointTest
             )
         );
         $customer = new Customer($this->apiClient);
-        $customer->id= 1;
+        $customer->id = 1;
         $updatedCustomer = $customer->update([
             "street" => "Payment lane",
             "house_number" => "1",

@@ -6,8 +6,8 @@ namespace Mooore\eCurring\Resource;
 
 class SubscriptionPlan extends AbstractResource
 {
-    const STATUS_ACTIVE = 'active';
-    const STATUS_INACTIVE = 'inactive';
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_INACTIVE = 'inactive';
 
     /**
      * @var string

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Mooore\eCurring\Resource;
 
 use Mooore\eCurring\eCurringHttpClient;
@@ -34,5 +33,4 @@ class SubscriptionPlanTest extends TestCase
             [SubscriptionPlan::STATUS_INACTIVE, 'isInActive', true],
         ];
     }
-
 }

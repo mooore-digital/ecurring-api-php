@@ -24,7 +24,8 @@ class TransactionEndpointTest extends BaseEndpointTest
                             "due_date": "2019-01-01T00:00:00+01:00"
                         }
                     }
-                }'),
+                }'
+            ),
             new Response(
                 201,
                 [],
@@ -174,7 +175,8 @@ class TransactionEndpointTest extends BaseEndpointTest
                             ]
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $transaction = $this->apiClient->transactions->get('ffa38848-6abc-4d22-b6b0-63fe1780969c');
@@ -188,7 +190,7 @@ class TransactionEndpointTest extends BaseEndpointTest
         $this->assertNull($transaction->webhook_url);
         $this->assertEquals('directdebit', $transaction->payment_method);
         $this->assertCount(7, $transaction->history);
-        foreach($transaction->history as $history) {
+        foreach ($transaction->history as $history) {
             $this->assertInstanceOf(\stdClass::class, $history);
         }
     }

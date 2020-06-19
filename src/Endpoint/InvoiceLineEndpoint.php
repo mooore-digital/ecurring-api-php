@@ -38,11 +38,14 @@ class InvoiceLineEndpoint extends AbstractEndpoint
      * @param int $invoiceId The identifier of the invoice.
      * @param string $description The description of the invoice line. This could be the name of your product.
      * @param double $amount The amount (per unit) of the product, in euro.
-     * @param double $tax_rate the tax rate (percentage) that is applied or should be applied to the amount, depending on tax_included.
+     * @param double $tax_rate the tax rate (percentage) that is applied or should be applied to the amount, depending
+     * on tax_included.
      * @param bool $tax_included Indicates whether or not the tax_rate is already applied to the given amount
-     * @param int $quantity the quantity of the product. The total amount will be calculated by multiplying the quantity with the amount.
+     * @param int $quantity the quantity of the product. The total amount will be calculated by multiplying the quantity
+     * with the amount.
      * @return AbstractResource|InvoiceLine
-     * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in draft state.
+     * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in draft
+     * state.
      */
     public function create(
         int $invoiceId,
@@ -60,7 +63,8 @@ class InvoiceLineEndpoint extends AbstractEndpoint
                 'tax_rate' => $tax_rate,
                 'tax_included' => $tax_included,
                 'quantity' => $quantity
-            ]));
+            ]
+        ));
     }
 
     /**
@@ -89,7 +93,7 @@ class InvoiceLineEndpoint extends AbstractEndpoint
      * @throws ApiException if the invoice line id is invalid, the resource cannot be found or the invoice is NOT
      * in draft state.
      */
-    public function delete(int $invoiceLineId) : void
+    public function delete(int $invoiceLineId): void
     {
         $this->rest_delete($invoiceLineId);
     }

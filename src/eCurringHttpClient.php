@@ -39,7 +39,7 @@ class eCurringHttpClient
     /**
      * HTTP status code 204 - No content
      */
-    const HTTP_NO_CONTENT = 204;
+    private const HTTP_NO_CONTENT = 204;
 
     /**
      * @var ClientInterface

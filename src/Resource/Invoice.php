@@ -14,12 +14,12 @@ use Mooore\eCurring\Exception\ApiException;
  */
 class Invoice extends AbstractResource
 {
-    const STATUS_DRAFT = 'draft';
-    const STATUS_OPEN = 'open';
-    const STATUS_PAID = 'paid';
-    const STATUS_CHARGED_BACK = 'charged_back';
-    const STATUS_CANCELLED = 'cancelled';
-    const STATUS_COMPLETED = 'completed';
+    public const STATUS_DRAFT = 'draft';
+    public const STATUS_OPEN = 'open';
+    public const STATUS_PAID = 'paid';
+    public const STATUS_CHARGED_BACK = 'charged_back';
+    public const STATUS_CANCELLED = 'cancelled';
+    public const STATUS_COMPLETED = 'completed';
 
     /**
      * @var string
@@ -70,12 +70,14 @@ class Invoice extends AbstractResource
     ];
 
     /**
-     *
-     * @param string $description The description of the invoice line. This could be the name of your product (max 255 characters).
+     * @param string $description The description of the invoice line. This could be the name of your product
+     * (max 255 characters).
      * @param double $amount The amount (per unit) of the product, in euro.
-     * @param double $tax_rate the tax rate (percentage) that is applied or should be applied to the amount, depending on tax_included.
+     * @param double $tax_rate the tax rate (percentage) that is applied or should be applied to the amount,
+     * depending on tax_included.
      * @param bool $tax_included Indicates whether or not the tax_rate is already applied to the given amount
-     * @param int $quantity the quantity of the product. The total amount will be calculated by multiplying the quantity with the amount.
+     * @param int $quantity the quantity of the product. The total amount will be calculated by multiplying the
+     * quantity with the amount.
      * @return InvoiceLine
      * @throws ApiException
      */
@@ -86,8 +88,14 @@ class Invoice extends AbstractResource
         bool $tax_included,
         int $quantity
     ) {
-        return $this->client->invoiceLines->create($this->id, $description, $amount, $tax_rate, $tax_included,
-            $quantity);
+        return $this->client->invoiceLines->create(
+            $this->id,
+            $description,
+            $amount,
+            $tax_rate,
+            $tax_included,
+            $quantity
+        );
     }
 
     /**
