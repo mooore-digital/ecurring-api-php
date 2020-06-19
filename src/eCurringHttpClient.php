@@ -15,6 +15,7 @@ use Mooore\eCurring\Endpoint\InvoiceEndpoint;
 use Mooore\eCurring\Endpoint\InvoiceLineEndpoint;
 use Mooore\eCurring\Endpoint\SubscriptionEndpoint;
 use Mooore\eCurring\Endpoint\SubscriptionPlanEndpoint;
+use Mooore\eCurring\Endpoint\TransactionEndpoint;
 use Mooore\eCurring\Exception\ApiException;
 use Mooore\eCurring\Exception\PhpVersionException;
 use Psr\Http\Message\ResponseInterface;
@@ -72,6 +73,10 @@ class eCurringHttpClient
      * @var InvoiceLineEndpoint
      */
     public $invoiceLines;
+    /**
+     * @var TransactionEndpoint
+     */
+    public $transactions;
 
     public function __construct(ClientInterface $httpClient = null)
     {
@@ -84,6 +89,7 @@ class eCurringHttpClient
         $this->subscriptions = new SubscriptionEndpoint($this);
         $this->invoices = new InvoiceEndpoint($this);
         $this->invoiceLines = new InvoiceLineEndpoint($this);
+        $this->transactions = new TransactionEndpoint($this);
         $this->assertPhpVersion();
     }
 

@@ -8,7 +8,6 @@ use InvalidArgumentException;
 use Mooore\eCurring\eCurringHttpClient;
 use Mooore\eCurring\Exception\ApiException;
 use Mooore\eCurring\Resource\AbstractResource;
-use Mooore\eCurring\Resource\Collection;
 use Mooore\eCurring\Resource\ResourceFactory;
 use Mooore\eCurring\Resource\ResourceFactoryInterface;
 
@@ -59,12 +58,12 @@ abstract class AbstractEndpoint
     }
 
     /**
-     * @param int $id
+     * @param int|string $id
      * @param array $filters
      * @return AbstractResource
      * @throws ApiException
      */
-    protected function rest_read(int $id, array $filters)
+    protected function rest_read($id, array $filters)
     {
         $result = $this->client->performHttpCall(
             'GET',
@@ -92,12 +91,12 @@ abstract class AbstractEndpoint
     }
 
     /**
-     * @param int $id
+     * @param int|string $id
      * @param array $body
      * @return AbstractResource|null
      * @throws ApiException
      */
-    protected function rest_delete(int $id, array $body = [])
+    protected function rest_delete($id, array $body = [])
     {
         $result = $this->client->performHttpCall(
             'DELETE',
