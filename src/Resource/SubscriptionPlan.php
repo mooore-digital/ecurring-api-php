@@ -6,6 +6,9 @@ namespace Mooore\eCurring\Resource;
 
 class SubscriptionPlan extends AbstractResource
 {
+    const STATUS_ACTIVE = 'active';
+    const STATUS_INACTIVE = 'inactive';
+
     /**
      * @var string
      */
@@ -61,4 +64,15 @@ class SubscriptionPlan extends AbstractResource
     {
         return $this->client->subscriptions->create($customerId, $this->id, $attributes);
     }
+
+    public function isActive(): bool
+    {
+        return $this->status === self::STATUS_ACTIVE;
+    }
+
+    public function isInActive(): bool
+    {
+        return $this->status === self::STATUS_INACTIVE;
+    }
+
 }
