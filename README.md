@@ -4,6 +4,8 @@ This is an unofficial library which provides PHP bindings for the eCurring API.
 
 [eCurring Home](https://www.ecurring.com/) | [eCurring API Documentation](https://docs.ecurring.com/)
 
+This library is inspired by [Mollie API client for PHP](https://github.com/mollie/mollie-api-php). 
+
 ## Requirements
 
 In order to use this library, you need:
