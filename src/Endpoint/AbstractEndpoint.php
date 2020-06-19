@@ -26,12 +26,10 @@ abstract class AbstractEndpoint
      * @var string
      */
     protected $resourcePath;
-
     /**
      * @var string the resource type of the resource object for the endpoint
      */
     protected $resourceType;
-
     /**
      * @var string|null
      */

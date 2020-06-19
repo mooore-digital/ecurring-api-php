@@ -74,5 +74,4 @@ class SubscriptionPlan extends AbstractResource
     {
         return $this->status === self::STATUS_INACTIVE;
     }
-
 }
