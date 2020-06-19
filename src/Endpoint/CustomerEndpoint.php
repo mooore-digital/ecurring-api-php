@@ -10,7 +10,7 @@ use Mooore\eCurring\Resource\Collection;
 use Mooore\eCurring\Resource\Customer;
 use Mooore\eCurring\Resource\CustomerCollection;
 
-class CustomerEndpoint extends AbstractEndpoint
+class CustomerEndpoint extends AbstractCollectionEndpoint
 {
     protected $resourcePath = 'customers';
 

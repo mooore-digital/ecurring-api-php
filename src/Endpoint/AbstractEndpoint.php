@@ -53,7 +53,7 @@ abstract class AbstractEndpoint
     {
         $result = $this->client->performHttpCall(
             'POST',
-            $this->getResourcePath() . $this->buildQueryString($filters),
+            $this->getApiPath($filters),
             $this->parseRequestBody($body)
         );
 
@@ -77,30 +77,6 @@ abstract class AbstractEndpoint
     }
 
     /**
-     * @param int $pageNumber
-     * @param int $pageSize
-     * @param array $filters
-     * @return array|Collection
-     * @throws ApiException
-     */
-    protected function rest_list(int $pageNumber = 1, int $pageSize = 10, array $filters = [])
-    {
-        $filters = array_merge(['page[number]' => $pageNumber, 'page[size]' => $pageSize], $filters);
-
-        $apiPath = $this->getResourcePath() . $this->buildQueryString($filters);
-
-        $result = $this->client->performHttpCall('GET', $apiPath);
-
-        $collection = $this->getResourceCollectionObject($result->meta->total, $result->links);
-
-        foreach ($result->data as $data) {
-            $collection[] = $this->resourceFactory->createFromApiResult($data, $this->getResourceObject());
-        }
-
-        return $collection;
-    }
-
-    /**
      * @param int $id
      * @param array $data
      * @return AbstractResource
@@ -120,16 +96,20 @@ abstract class AbstractEndpoint
     /**
      * @param int $id
      * @param array $body
-     * @return AbstractResource
+     * @return AbstractResource|null
      * @throws ApiException
      */
-    protected function rest_delete(int $id, array $body)
+    protected function rest_delete(int $id, array $body = [])
     {
         $result = $this->client->performHttpCall(
             'DELETE',
             sprintf('%s/%s', $this->getResourcePath(), $id),
             $this->parseRequestBody($body)
         );
+
+        if ($result === null) {
+            return null;
+        }
 
         return $this->resourceFactory->createFromApiResult($result->data, $this->getResourceObject());
     }
@@ -165,6 +145,15 @@ abstract class AbstractEndpoint
     private function getResourceType(): string
     {
         return $this->resourceType;
+    }
+
+    /**
+     * @param array $filters
+     * @return string
+     */
+    protected function getApiPath(array $filters = [])
+    {
+        return $this->getResourcePath() . $this->buildQueryString($filters);
     }
 
     private function buildQueryString(array $filters): string
@@ -205,14 +194,9 @@ abstract class AbstractEndpoint
     }
 
     /**
+     * Get the object that is used by this API endpoint. Every API endpoint uses one type of object.
+     *
      * @return AbstractResource
      */
     abstract protected function getResourceObject();
-
-    /**
-     * @param int $count
-     * @param object $links
-     * @return Collection
-     */
-    abstract protected function getResourceCollectionObject(int $count, object $links);
 }

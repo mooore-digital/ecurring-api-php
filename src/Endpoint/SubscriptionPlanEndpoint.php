@@ -5,30 +5,21 @@ declare(strict_types=1);
 namespace Mooore\eCurring\Endpoint;
 
 use Mooore\eCurring\Exception\ApiException;
-use Mooore\eCurring\Resource\AbstractResource;
 use Mooore\eCurring\Resource\Collection;
 use Mooore\eCurring\Resource\SubscriptionPlan;
 use Mooore\eCurring\Resource\SubscriptionPlanCollection;
 
-class SubscriptionPlanEndpoint extends AbstractEndpoint
+class SubscriptionPlanEndpoint extends AbstractCollectionEndpoint
 {
     protected $resourcePath = 'subscription-plans';
 
     protected $resourceType = 'subscription-plan';
 
-    /**
-     * @return AbstractResource
-     */
     protected function getResourceObject()
     {
         return new SubscriptionPlan($this->client);
     }
 
-    /**
-     * @param int $count
-     * @param object $links
-     * @return mixed
-     */
     protected function getResourceCollectionObject(int $count, object $links)
     {
         return new SubscriptionPlanCollection($this->client, $this->resourceFactory, $count, $links);

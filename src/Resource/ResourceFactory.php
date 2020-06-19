@@ -30,7 +30,7 @@ class ResourceFactory implements ResourceFactoryInterface
 
             $type = self::getPropertyType($resource, $property);
 
-            if ($type === '\DateTime' && $value !== null) {
+            if (($type === '\DateTime' || $type === '\DateTime|null') && $value !== null) {
                 try {
                     $value = new \DateTime($value);
                 } catch (\Exception $e) {

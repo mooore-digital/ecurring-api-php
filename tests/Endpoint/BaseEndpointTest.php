@@ -83,4 +83,14 @@ abstract class BaseEndpointTest extends TestCase
                 return $response;
             });
     }
+
+    protected function copy($array, $object)
+    {
+        // Unit test should be isolated, therefore we do not reuse the ResourceFactory::createFromApiResult
+        foreach ($array as $property => $value) {
+            $object->$property = $value;
+        }
+
+        return $object;
+    }
 }

@@ -10,7 +10,7 @@ use Mooore\eCurring\Resource\Collection;
 use Mooore\eCurring\Resource\Subscription;
 use Mooore\eCurring\Resource\SubscriptionCollection;
 
-class SubscriptionEndpoint extends AbstractEndpoint
+class SubscriptionEndpoint extends AbstractCollectionEndpoint
 {
     /**
      * @var string
