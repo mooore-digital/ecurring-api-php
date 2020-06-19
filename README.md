@@ -68,8 +68,6 @@ do {
 
 ## Roadmap
 
-- Implement [Transactions API](https://docs.ecurring.com/transactions/create)
 - Implement [Included resources](https://docs.ecurring.com/includes)
 - Implement [Sparse Fieldsets](https://docs.ecurring.com/sparse-fieldsets)
 - Implement resource relationships
-- Write unit tests for all resources
