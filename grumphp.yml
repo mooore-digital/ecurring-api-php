@@ -5,3 +5,4 @@ parameters:
 #        phpstan:
 #            level: 7
         phpunit: ~
+        phpcs: ~
