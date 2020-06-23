@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Mooore\eCurring\Endpoint;
-
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
@@ -30,8 +28,10 @@ class InvoiceLineEndpointTest extends BaseEndpointTest
                             "quantity": 2
                         }
                     }
-                }'),
-            new Response(201,
+                }'
+            ),
+            new Response(
+                201,
                 [],
                 '{
                     "links": {
@@ -77,7 +77,8 @@ class InvoiceLineEndpointTest extends BaseEndpointTest
     {
         $this->mockApiCall(
             new Request('GET', '/invoice-lines/1562050264'),
-            new Response(200,
+            new Response(
+                200,
                 [],
                 '{
                     "links": {
@@ -101,7 +102,8 @@ class InvoiceLineEndpointTest extends BaseEndpointTest
                             "updated_at": "2019-10-04T14:44:47+02:00"
                         }
                     }
-                }')
+                }'
+            )
         );
 
         $invoiceLine = $this->apiClient->invoiceLines->get(1562050264);
@@ -119,10 +121,11 @@ class InvoiceLineEndpointTest extends BaseEndpointTest
     public function testUpdateInvoiceLine()
     {
         $this->mockApiCall(
-            new Request('PATCH',
+            new Request(
+                'PATCH',
                 '/invoice-lines/1562050264',
                 [],
-            '{
+                '{
                     "data": {
                         "type": "invoice-line",
                         "id": "1562050264",
@@ -132,7 +135,8 @@ class InvoiceLineEndpointTest extends BaseEndpointTest
                     }
                 }'
             ),
-            new Response(200,
+            new Response(
+                200,
                 [],
                 '{
                     "links": {

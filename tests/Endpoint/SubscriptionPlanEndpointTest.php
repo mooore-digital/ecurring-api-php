@@ -13,7 +13,8 @@ class SubscriptionPlanEndpointTest extends BaseEndpointTest
     {
         $this->mockApiCall(
             new Request('GET', '/subscription-plans/1'),
-            new Response(200,
+            new Response(
+                200,
                 [],
                 '{
                   "links": {
@@ -71,8 +72,8 @@ class SubscriptionPlanEndpointTest extends BaseEndpointTest
     {
         $this->mockApiCall(
             new Request('GET', '/subscription-plans?page[number]=1&page[size]=10'),
-            new Response(200
-                ,
+            new Response(
+                200,
                 [],
                 '{
                   "meta": {
@@ -141,7 +142,8 @@ class SubscriptionPlanEndpointTest extends BaseEndpointTest
                       }
                     }
                   ]
-                }')
+                }'
+            )
         );
         $subscriptionPlans = $this->apiClient->subscriptionPlans->page();
         $this->assertEquals(2, $subscriptionPlans->count);

@@ -182,5 +182,4 @@ class TransactionTest extends TestCase
             [Transaction::STATUS_PAYMENT_REMINDER_OVERDUE, 'isPaymentReminderOverdue', true],
         ];
     }
-
 }

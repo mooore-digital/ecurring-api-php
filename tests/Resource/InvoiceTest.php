@@ -14,7 +14,8 @@ class InvoiceTest extends TestCase
      *
      * @dataProvider invoiceStatusDataProvider
      */
-    public function testInvoiceStatus($status, $function, $expected_boolean) {
+    public function testInvoiceStatus($status, $function, $expected_boolean)
+    {
         $invoice = new Invoice($this->createMock(eCurringHttpClient::class));
         $invoice->status = $status;
 
@@ -67,5 +68,4 @@ class InvoiceTest extends TestCase
             [Invoice::STATUS_COMPLETED, 'isCompleted', true],
         ];
     }
-
 }

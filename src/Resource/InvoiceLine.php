@@ -82,7 +82,7 @@ class InvoiceLine extends AbstractResource
     /**
      * @throws ApiException
      */
-    public function delete() : void
+    public function delete(): void
     {
         $this->client->invoiceLines->delete($this->id);
     }

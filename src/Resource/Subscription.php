@@ -13,10 +13,10 @@ use Mooore\eCurring\Exception\ApiException;
  */
 class Subscription extends AbstractResource
 {
-    const STATUS_ACTIVE = 'active';
-    const STATUS_PAUSED = 'paused';
-    const STATUS_CANCELLED = 'cancelled';
-    const STATUS_UNVERIFIED = 'unverified';
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_PAUSED = 'paused';
+    public const STATUS_CANCELLED = 'cancelled';
+    public const STATUS_UNVERIFIED = 'unverified';
 
     /**
      * @var string
@@ -158,7 +158,7 @@ class Subscription extends AbstractResource
 
     public function createInvoice(array $attributes = []): Invoice
     {
-        return $this->client->invoices->createForSubscription($this->id,  $attributes);
+        return $this->client->invoices->createForSubscription($this->id, $attributes);
     }
 
     public function isActive(): bool
