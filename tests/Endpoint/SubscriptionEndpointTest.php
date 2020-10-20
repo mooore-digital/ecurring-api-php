@@ -183,6 +183,31 @@ class SubscriptionEndpointTest extends BaseEndpointTest
         $this->assertNull($subscription->success_redirect_url);
         $this->assertEquals(new \DateTime('2017-02-01T11:21:09+01:00'), $subscription->created_at);
         $this->assertEquals(new \DateTime('2017-02-11T00:00:00+01:00'), $subscription->updated_at);
+        $this->assertEquals([
+            'subscription-plan' => [
+                'data' => [
+                    'type' => 'subscription-plan',
+                    'id' => '1',
+                ],
+            ],
+            'customer' => [
+                'data' => [
+                    'type' => 'customer',
+                    'id' => 1,
+                ],
+            ],
+            'transactions' => [
+                'links' => [
+                    'related' => 'https://api.ecurring.com/subscriptions/1/transactions',
+                ],
+                'data' => [
+                    [
+                        'type' => 'transaction',
+                        'id' => '02f3c67b-1e1a-4692-8826-14f17f9b2c61',
+                    ],
+                ],
+            ],
+        ], json_decode(json_encode($subscription->relationships), true));
     }
 
     public function testListSubscriptions()
