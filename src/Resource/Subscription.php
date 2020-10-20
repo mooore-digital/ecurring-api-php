@@ -71,6 +71,10 @@ class Subscription extends AbstractResource
      */
     public $metadata;
     /**
+     * @var mixed
+     */
+    public $relationships;
+    /**
      * @var array
      */
     protected $exportProperties = [
@@ -86,7 +90,8 @@ class Subscription extends AbstractResource
         'subscription_webhook_url',
         'transaction_webhook_url',
         'success_redirect_url',
-        'metadata'
+        'metadata',
+        'relationships'
     ];
 
     /**

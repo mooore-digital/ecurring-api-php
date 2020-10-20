@@ -92,6 +92,10 @@ class Customer extends AbstractResource
      * @var string
      */
     public $language;
+    /**
+     * @var mixed
+     */
+    public $relationships;
 
     /**
      * @var array
@@ -117,7 +121,8 @@ class Customer extends AbstractResource
         'country_iso2',
         'email',
         'telephone',
-        'language'
+        'language',
+        'relationships'
     ];
 
     /**

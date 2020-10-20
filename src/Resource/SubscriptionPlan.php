@@ -42,6 +42,10 @@ class SubscriptionPlan extends AbstractResource
      */
     public $terms;
     /**
+     * @var mixed
+     */
+    public $relationships;
+    /**
      * @var array
      */
     protected $exportProperties = [
@@ -51,7 +55,8 @@ class SubscriptionPlan extends AbstractResource
         'mandate_authentication_method',
         'send_invoice',
         'storno_retries',
-        'terms'
+        'terms',
+        'relationships'
     ];
 
     /**
