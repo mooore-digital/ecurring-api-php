@@ -13,6 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: php-actions/composer@v1
-    - uses: php-actions/phpunit@v1
-      with:
-        config: phpunit.xml
+    - name: Check PHP version
+      run: php -v
+    - name: Validate composer.json
+      run: composer validate
+    - name: Run the tests
+      run: php vendor/bin/grumphp run --no-interaction
