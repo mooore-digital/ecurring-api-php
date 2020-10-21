@@ -80,7 +80,7 @@ class TransactionEndpointTest extends BaseEndpointTest
 
         $transaction = new Transaction($this->apiClient);
         $transaction->id = 'ffa38848-6abc-4d22-b6b0-63fe1780969c';
-        $this->assertNull($transaction->delete());
+        $transaction->delete();
     }
 
     public function testGetTransaction()

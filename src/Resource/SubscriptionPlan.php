@@ -42,7 +42,7 @@ class SubscriptionPlan extends AbstractResource
      */
     public $terms;
     /**
-     * @var \stdObject
+     * @var object
      */
     public $relationships;
     /**

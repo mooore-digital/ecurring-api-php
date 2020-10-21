@@ -24,7 +24,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * @param array $attributes containing the optional attributes of the invoice like: invoice_date, transaction_date,
      * original_invoice_id
      * @param array $filters
-     * @return AbstractResource|Invoice
+     * @return Invoice
      * @throws ApiException
      */
     public function createForSubscription(int $subscriptionId, array $attributes = [], array $filters = [])
@@ -42,7 +42,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      *
      * @param int $invoiceId the identifier of the invoice
      * @param array $parameters
-     * @return AbstractResource|Invoice
+     * @return Invoice
      * @throws ApiException if the invoice id is invalid or the resource cannot be found.
      */
     public function get(int $invoiceId, array $parameters = [])
@@ -56,7 +56,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * @param int $pageNumber
      * @param int $pageSize
      * @param array $parameters
-     * @return Collection|Invoice[]|InvoiceCollection
+     * @return InvoiceCollection|Invoice[]
      * @throws ApiException
      */
     public function page(int $pageNumber = 1, int $pageSize = 10, array $parameters = [])
@@ -69,7 +69,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      *
      * @param int $invoiceId
      * @param array $attributes
-     * @return AbstractResource|Invoice
+     * @return Invoice
      * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in
      * draft state.
      */
@@ -98,7 +98,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * Finalise the given draft invoice in eCurring.
      *
      * @param int $invoiceId
-     * @return AbstractResource|Invoice
+     * @return Invoice
      * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in
      * draft state.
      */
@@ -119,7 +119,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * also has the same invoice lines, but the amounts are inverted.
      *
      * @param int $invoiceId
-     * @return AbstractResource|Invoice
+     * @return Invoice
      * @throws ApiException if the invoice id is invalid, the resource cannot be found.
      */
     public function credit(int $invoiceId)
@@ -138,7 +138,7 @@ class InvoiceEndpoint extends AbstractCollectionEndpoint
      * This can only be done when the invoice is in the open state.
      *
      * @param int $invoiceId
-     * @return AbstractResource|Invoice
+     * @return Invoice
      * @throws ApiException if the invoice id is invalid, the resource cannot be found or the invoice is NOT in
      * open state.
      */

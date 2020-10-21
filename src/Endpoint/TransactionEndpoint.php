@@ -30,7 +30,7 @@ class TransactionEndpoint extends AbstractEndpoint
      * @param float $amount The amount of the transaction, in Euro.
      * @param array $attributes containing the optional attribute: due_date.
      * @param array $filters
-     * @return AbstractResource|Transaction
+     * @return Transaction
      * @throws ApiException
      */
     public function create($subscriptionId, float $amount, array $attributes = [], array $filters = [])
@@ -51,7 +51,7 @@ class TransactionEndpoint extends AbstractEndpoint
      *
      * @param string $transactionId the identifier of the transaction
      * @param array $parameters
-     * @return AbstractResource|Transaction
+     * @return Transaction
      * @throws ApiException
      */
     public function get(string $transactionId, array $parameters = [])

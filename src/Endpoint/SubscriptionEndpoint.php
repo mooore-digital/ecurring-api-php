@@ -41,7 +41,7 @@ class SubscriptionEndpoint extends AbstractCollectionEndpoint
      * @param int $customerId
      * @param int $subscriptionPlanId
      * @param array $attributes
-     * @return AbstractResource|Subscription
+     * @return Subscription
      * @throws ApiException
      */
     public function create(int $customerId, int $subscriptionPlanId, array $attributes = [])
@@ -56,7 +56,7 @@ class SubscriptionEndpoint extends AbstractCollectionEndpoint
 
     /**
      * @param int $subscriptionId
-     * @return AbstractResource|Subscription
+     * @return Subscription
      * @throws ApiException
      */
     public function get(int $subscriptionId)
@@ -67,7 +67,7 @@ class SubscriptionEndpoint extends AbstractCollectionEndpoint
     /**
      * @param int $pageNumber
      * @param int $pageSize
-     * @return Collection|Subscription[]|SubscriptionCollection
+     * @return SubscriptionCollection|Subscription[]
      * @throws ApiException
      */
     public function page(int $pageNumber = 1, int $pageSize = 10)
@@ -78,7 +78,7 @@ class SubscriptionEndpoint extends AbstractCollectionEndpoint
     /**
      * @param int $subscriptionId
      * @param array $attributes
-     * @return AbstractResource|Subscription
+     * @return Subscription
      * @throws ApiException
      */
     public function update(int $subscriptionId, array $attributes)

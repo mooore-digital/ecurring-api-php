@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mooore\eCurring\Endpoint;
 
 use Mooore\eCurring\Exception\ApiException;
+use Mooore\eCurring\Resource\AbstractResource;
 use Mooore\eCurring\Resource\Collection;
 use Mooore\eCurring\Resource\SubscriptionPlan;
 use Mooore\eCurring\Resource\SubscriptionPlanCollection;
@@ -28,7 +29,7 @@ class SubscriptionPlanEndpoint extends AbstractCollectionEndpoint
     /**
      * @param int $subscriptionPlanId
      * @param array $parameters
-     * @return AbstractResource|SubscriptionPlan
+     * @return SubscriptionPlan
      * @throws ApiException
      */
     public function get(int $subscriptionPlanId, array $parameters = [])
@@ -40,7 +41,7 @@ class SubscriptionPlanEndpoint extends AbstractCollectionEndpoint
      * @param int $pageNumber
      * @param int $pageSize
      * @param array $parameters
-     * @return Collection|SubscriptionPlan[]|SubscriptionPlanCollection
+     * @return SubscriptionPlanCollection|SubscriptionPlan[]
      * @throws ApiException
      */
     public function page(int $pageNumber = 1, int $pageSize = 10, array $parameters = [])

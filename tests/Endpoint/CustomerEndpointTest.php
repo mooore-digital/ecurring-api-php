@@ -80,6 +80,7 @@ class CustomerEndpointTest extends BaseEndpointTest
             )
         );
 
+        /** @var Customer $customer */
         $customer = $this->apiClient->customers->create([
             'first_name' => 'Customer',
             'last_name' => 'Test',
@@ -156,8 +157,9 @@ class CustomerEndpointTest extends BaseEndpointTest
                 }'
             )
         );
-        $customer = $this->apiClient->customers->get(1);
 
+        /** @var Customer $customer */
+        $customer = $this->apiClient->customers->get(1);
         $this->assertInstanceOf(Customer::class, $customer);
         $this->assertEquals("1", $customer->id);
         $this->assertEquals("Jeroen", $customer->first_name);

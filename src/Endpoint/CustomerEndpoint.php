@@ -37,7 +37,7 @@ class CustomerEndpoint extends AbstractCollectionEndpoint
     /**
      * @param array $attributes
      * @param array $filters
-     * @return AbstractResource|Customer
+     * @return Customer
      * @throws ApiException
      */
     public function create(array $attributes, array $filters = [])
@@ -51,7 +51,7 @@ class CustomerEndpoint extends AbstractCollectionEndpoint
     /**
      * @param int $customerId
      * @param array $parameters
-     * @return AbstractResource|Customer
+     * @return Customer
      * @throws ApiException
      */
     public function get(int $customerId, array $parameters = [])
@@ -63,7 +63,7 @@ class CustomerEndpoint extends AbstractCollectionEndpoint
      * @param int $pageNumber
      * @param int $pageSize
      * @param array $parameters
-     * @return Collection|Customer[]|CustomerCollection
+     * @return CustomerCollection|Customer[]
      * @throws ApiException
      */
     public function page(int $pageNumber = 1, int $pageSize = 10, array $parameters = [])
@@ -74,7 +74,7 @@ class CustomerEndpoint extends AbstractCollectionEndpoint
     /**
      * @param int $customerId
      * @param array $attributes
-     * @return AbstractResource|Customer
+     * @return Customer
      * @throws ApiException
      */
     public function update(int $customerId, array $attributes)

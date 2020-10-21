@@ -1,6 +1,6 @@
 grumphp:
     tasks:
-#        phpstan:
-#            level: 7
+        phpstan:
+          level: 2
         phpunit: ~
         phpcs: ~
