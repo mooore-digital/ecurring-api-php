@@ -57,6 +57,11 @@ class Invoice extends AbstractResource
     public $transaction_date;
 
     /**
+     * @var \stdObject
+     */
+    public $relationships;
+
+    /**
      * @var array
      */
     protected $exportProperties = [
@@ -66,7 +71,8 @@ class Invoice extends AbstractResource
         'amount_incl',
         'tax_amount',
         'invoice_date',
-        'transaction_date'
+        'transaction_date',
+        'relationships'
     ];
 
     /**
