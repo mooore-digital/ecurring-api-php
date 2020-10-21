@@ -57,7 +57,7 @@ class Invoice extends AbstractResource
     public $transaction_date;
 
     /**
-     * @var mixed
+     * @var \stdObject
      */
     public $relationships;
 

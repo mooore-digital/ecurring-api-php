@@ -71,7 +71,7 @@ class Subscription extends AbstractResource
      */
     public $metadata;
     /**
-     * @var mixed
+     * @var \stdObject
      */
     public $relationships;
     /**

@@ -93,7 +93,7 @@ class Customer extends AbstractResource
      */
     public $language;
     /**
-     * @var mixed
+     * @var \stdObject
      */
     public $relationships;
 
