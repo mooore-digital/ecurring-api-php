@@ -34,7 +34,7 @@ class eCurringHttpClient
     /**
      * eCurring HTTP Client Version.
      */
-    private const VERSION = '0.4.0';
+    private const VERSION = '0.5.0';
 
     /**
      * HTTP status code 204 - No content

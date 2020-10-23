@@ -10,15 +10,19 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Mooore Digital",
+            "email": "info@mooore.nl"
+        },
+        {
             "name": "Timon de Groot",
             "email": "timon@mooore.nl"
         }
     ],
     "require": {
         "php": ">=7.2",
-        "guzzlehttp/guzzle": "^6.3|^7.0.1",
+        "ext-json": "*",
         "composer/ca-bundle": "^1.1",
-        "ext-json": "*"
+        "guzzlehttp/guzzle": "^6.3|^7.0.1"
     },
     "autoload": {
         "psr-4": {
